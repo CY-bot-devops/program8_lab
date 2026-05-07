@@ -1,0 +1,12 @@
+
+- name: Deploy Maven Artifact
+  hosts: localhost
+  tasks:
+    - name: Copy JAR file
+      copy:
+        src: /mnt/c/Users/student/IdeaProjects/program8_lab/target/program8_lab-1.0-SNAPSHOT.jar
+        dest: /tmp/program8_lab-1.0-SNAPSHOT.jar
+
+    - name: Run JAR
+      shell: "java -jar /tmp/program8_lab-1.0-SNAPSHOT.jar &"
+
